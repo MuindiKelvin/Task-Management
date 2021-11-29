@@ -82,8 +82,44 @@
                   <p>List</p>
                 </a>
               </li>
+
             </ul>
           </li>
+
+
+          <?php endif; ?>
+          <?php if($_SESSION['login_type'] == 1): ?>
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-edit_user">
+              <i class="nav-icon fas fafas fa-layer-group"></i>
+              <p>
+                Charts
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./index.php?page=users_progress" class="nav-link nav-new_user tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>User Tasks Chart</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index.php?page=project_chart" class="nav-link nav-user_list tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>Project's Chart</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index.php?page=user_chart" class="nav-link nav-user_list tree-item">
+                  <i class="fas fa-angle-right nav-icon"></i>
+                  <p>User's Chart</p>
+                </a>
+              </li>
+          </ul>
+          </li>
+
+         
         <?php endif; ?>
         </ul>
       </nav>

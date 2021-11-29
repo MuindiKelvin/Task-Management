@@ -23,6 +23,7 @@
 					$type = array('',"Admin","Project Manager","Employee");
 					$qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc");
 					while($row= $qry->fetch_assoc()):
+						
 					?>
 					<tr>
 						<th class="text-center"><?php echo $i++ ?></th>
