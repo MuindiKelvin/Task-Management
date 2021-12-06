@@ -1,7 +1,7 @@
 <?php if(!isset($conn)){ include 'db_connect.php'; } ?>
 
 <div class="col-lg-12">
-	<div class="card card-outline card-primary">
+	<div class="card">
 		<div class="card-body">
 			<form action="" id="manage-project">
 
@@ -106,7 +106,7 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved',"success");
+					alert_toast('Data successfully saved',"info");
 					setTimeout(function(){
 						location.href = 'index.php?page=project_list'
 					},2000)

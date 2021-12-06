@@ -93,7 +93,7 @@ if(isset($_GET['id'])){
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved',"success");
+					alert_toast('Data successfully saved',"primary");
 					setTimeout(function(){
 						location.reload()
 					},1500)

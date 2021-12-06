@@ -1,15 +1,15 @@
 <?php include'db_connect.php' ?>
 <div class="col-lg-12">
-	<div class="card card-outline card-success">
+	<div class="card ">
 		<div class="card-header">
             <?php if($_SESSION['login_type'] != 3): ?>
 			<div class="card-tools">
-				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_project"><i class="fa fa-plus"></i> Add New project</a>
+				<a class="btn btn-block btn-sm btn-default " href="./index.php?page=new_project"><i class="fa fa-plus"></i> Add New project</a>
 			</div>
             <?php endif; ?>
 		</div>
 		<div class="card-body">
-			<table class="table tabe-hover table-condensed" id="list">
+			<table class="table table-bordered table-striped" id="list">
 				<colgroup>
 					<col width="5%">
 					<col width="35%">
@@ -70,17 +70,17 @@
 						<td class="text-center">
 							<?php
 							  if($stat[$row['status']] =='Pending'){
-							  	echo "<span class='badge badge-secondary'>{$stat[$row['status']]}</span>";
+							  	echo "<span class='badge badge-info'>{$stat[$row['status']]}</span>";
 							  }elseif($stat[$row['status']] =='Started'){
 							  	echo "<span class='badge badge-primary'>{$stat[$row['status']]}</span>";
 							  }elseif($stat[$row['status']] =='On-Progress'){
-							  	echo "<span class='badge badge-info'>{$stat[$row['status']]}</span>";
-							  }elseif($stat[$row['status']] =='On-Hold'){
 							  	echo "<span class='badge badge-warning'>{$stat[$row['status']]}</span>";
+							  }elseif($stat[$row['status']] =='On-Hold'){
+							  	echo "<span class='badge badge-dark'>{$stat[$row['status']]}</span>";
 							  }elseif($stat[$row['status']] =='Over Due'){
-							  	echo "<span class='badge badge-danger'>{$stat[$row['status']]}</span>";
+							  	echo "<span class='badge badge-dark'>{$stat[$row['status']]}</span>";
 							  }elseif($stat[$row['status']] =='Done'){
-							  	echo "<span class='badge badge-success'>{$stat[$row['status']]}</span>";
+							  	echo "<span class='badge badge-danger'>{$stat[$row['status']]}</span>";
 							  }
 							?>
 						</td>
@@ -129,7 +129,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Data successfully deleted",'info')
 					setTimeout(function(){
 						location.reload()
 					},1500)

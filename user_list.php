@@ -1,13 +1,13 @@
 <?php include'db_connect.php' ?>
 <div class="col-lg-12">
-	<div class="card card-outline card-success">
+	<div class="card">
 		<div class="card-header">
 			<div class="card-tools">
-				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_user"><i class="fa fa-plus"></i> Add New User</a>
+				<a class="btn btn-block btn-sm btn-default btn-flat border-info" href="./index.php?page=new_user"><i class="fa fa-plus"></i> Add New User</a>
 			</div>
 		</div>
 		<div class="card-body">
-			<table class="table tabe-hover table-bordered" id="list">
+			<table class="table table-bordered table-striped" id="list">
 				<thead>
 					<tr>
 						<th class="text-center">#</th>
@@ -67,7 +67,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("Data successfully deleted",'primary')
 					setTimeout(function(){
 						location.reload()
 					},1500)

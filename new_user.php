@@ -59,8 +59,8 @@
 				</div>
 				<hr>
 				<div class="col-lg-12 text-right justify-content-center d-flex">
-					<button class="btn btn-primary mr-2">Save</button>
-					<button class="btn btn-secondary" type="button" onclick="location.href = 'index.php?page=user_list'">Cancel</button>
+					<button class="btn btn-secondary mr-2">Save</button>
+					<button class="btn btn-info" type="button" onclick="location.href = 'index.php?page=user_list'">Cancel</button>
 				</div>
 			</form>
 		</div>
@@ -122,7 +122,7 @@
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved.',"success");
+					alert_toast('Data successfully saved.',"primary");
 					setTimeout(function(){
 						location.replace('index.php?page=user_list')
 					},750)

@@ -4,15 +4,7 @@ $twhere ="";
 if($_SESSION['login_type'] != 1)
   $twhere = "  ";
 ?>
-<!-- Info boxes -->
- <div class="col-12">
-          <div class="card">
-            <div class="card-body">
-              Welcome <?php echo $_SESSION['login_name'] ?>!
-            </div>
-          </div>
-  </div>
-  <hr>
+ 
   <?php 
 
     $where = "";
@@ -30,28 +22,21 @@ if($_SESSION['login_type'] != 1)
     ?>
         
       <div class="row">
-        <div class="col-md-8">
-        <div class="card card-outline card-success">
+        <div class="col-md-10">
+        <div class="card">
           <div class="card-header">
-            <b>Project Progress</b>
+            <b>Projects Overall Analysis</b>
           </div>
           <div class="card-body p-0">
             <div class="table-responsive">
-              <table class="table m-0 table-hover">
-                <colgroup>
-                  <col width="5%">
-                  <col width="30%">
-                  <col width="35%">
-                  <col width="15%">
-                  <col width="25%">
-            
-                </colgroup>
+              <table class="table table-bordered table-striped">
+             
                 <thead>
                   <th>#</th>
                   <th>Project</th>
                   <th>Progress</th>
                   <th>Status</th>
-                  <th></th>
+                  <th>Action</th>
                 </thead>
                 <tbody>
                 <?php
@@ -106,22 +91,22 @@ if($_SESSION['login_type'] != 1)
                       <td class="project-state">
                           <?php
                             if($stat[$row['status']] =='Pending'){
-                              echo "<span class='badge badge-secondary'>{$stat[$row['status']]}</span>";
+                              echo "<span class='badge badge-dark'>{$stat[$row['status']]}</span>";
                             }elseif($stat[$row['status']] =='Started'){
                               echo "<span class='badge badge-primary'>{$stat[$row['status']]}</span>";
                             }elseif($stat[$row['status']] =='On-Progress'){
-                              echo "<span class='badge badge-info'>{$stat[$row['status']]}</span>";
-                            }elseif($stat[$row['status']] =='On-Hold'){
                               echo "<span class='badge badge-warning'>{$stat[$row['status']]}</span>";
+                            }elseif($stat[$row['status']] =='On-Hold'){
+                              echo "<span class='badge badge-info'>{$stat[$row['status']]}</span>";
                             }elseif($stat[$row['status']] =='Over Due'){
                               echo "<span class='badge badge-danger'>{$stat[$row['status']]}</span>";
                             }elseif($stat[$row['status']] =='Done'){
-                              echo "<span class='badge badge-success'>{$stat[$row['status']]}</span>";
+                              echo "<span class='badge badge-danger'>{$stat[$row['status']]}</span>";
                             }
                           ?>
                       </td>
                       <td>
-                        <a class="btn btn-primary btn-sm" href="./index.php?page=view_project&id=<?php echo $row['id'] ?>">
+                        <a class="btn btn-success btn-sm" href="./index.php?page=view_project&id=<?php echo $row['id'] ?>">
                               <i class="fas fa-folder">
                               </i>
                               View
@@ -135,7 +120,8 @@ if($_SESSION['login_type'] != 1)
           </div>
         </div>
         </div>
-        <div class="col-md-4">
+
+        <div class="col-md-2">
           <div class="row">
           <div class="col-12 col-sm-6 col-md-12">
             <div class="small-box bg-light shadow-sm border">
@@ -145,7 +131,7 @@ if($_SESSION['login_type'] != 1)
                 <p>Total Projects</p>
               </div>
               <div class="icon">
-                <i class="fa fa-layer-group"></i>
+                <i class="fa fa-wallet"></i>
               </div>
             </div>
           </div>
@@ -156,7 +142,7 @@ if($_SESSION['login_type'] != 1)
                 <p>Total Tasks</p>
               </div>
               <div class="icon">
-                <i class="fa fa-tasks"></i>
+                <i class="fa fa-scroll"></i>
               </div>
             </div>
           </div>

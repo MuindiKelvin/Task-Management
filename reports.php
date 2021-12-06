@@ -1,10 +1,10 @@
 <?php include 'db_connect.php' ?>
  <div class="col-md-12">
-        <div class="card card-outline card-success">
+        <div class="card card-outline">
           <div class="card-header">
             <b>Project Progress</b>
             <div class="card-tools">
-            	<button class="btn btn-flat btn-sm bg-gradient-success btn-success" id="print"><i class="fa fa-print"></i> Print</button>
+            	<button class="btn btn-flat btn-sm bg-gradient-warning btn-warning" id="print"><i class="fa fa-print"></i> Print</button>
             </div>
           </div>
           <div class="card-body p-0">
@@ -22,7 +22,7 @@
                   <th>Project</th>
                   <th>Task</th>
                   <th>Completed Task</th>
-                  <th>Work Duration</th>
+                  <!--<th>Work Duration</th>-->
                   <th>Progress</th>
                   <th>Status</th>
                 </thead>
@@ -43,8 +43,8 @@
                 $prog = $tprog > 0 ? ($cprog/$tprog) * 100 : 0;
                 $prog = $prog > 0 ?  number_format($prog,2) : $prog;
                 $prod = $conn->query("SELECT * FROM user_productivity where project_id = {$row['id']}")->num_rows;
-                $dur = $conn->query("SELECT sum(time_rendered) as duration FROM user_productivity where project_id = {$row['id']}");
-                $dur = $dur->num_rows > 0 ? $dur->fetch_assoc()['duration'] : 0;
+                //$dur = $conn->query("SELECT sum(time_rendered) as duration FROM user_productivity where project_id = {$row['id']}");
+                //$dur = $dur->num_rows > 0 ? $dur->fetch_assoc()['duration'] : 0;
                 if($row['status'] == 0 && strtotime(date('Y-m-d')) >= strtotime($row['start_date'])):
                 if($prod  > 0  || $cprog > 0)
                   $row['status'] = 2;
@@ -73,9 +73,9 @@
                       <td class="text-center">
                       	<?php echo number_format($cprog) ?>
                       </td>
-                      <td class="text-center">
+                      <!--<td class="text-center">
                       	<?php echo number_format($dur).' Hr/s.' ?>
-                      </td>
+                      </td>-->
                       <td class="project_progress">
                           <div class="progress progress-sm">
                               <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $prog ?>%">
@@ -90,15 +90,15 @@
                             if($stat[$row['status']] =='Pending'){
                               echo "<span class='badge badge-secondary'>{$stat[$row['status']]}</span>";
                             }elseif($stat[$row['status']] =='Started'){
-                              echo "<span class='badge badge-primary'>{$stat[$row['status']]}</span>";
+                              echo "<span class='badge badge-dark'>{$stat[$row['status']]}</span>";
                             }elseif($stat[$row['status']] =='On-Progress'){
-                              echo "<span class='badge badge-info'>{$stat[$row['status']]}</span>";
-                            }elseif($stat[$row['status']] =='On-Hold'){
                               echo "<span class='badge badge-warning'>{$stat[$row['status']]}</span>";
+                            }elseif($stat[$row['status']] =='On-Hold'){
+                              echo "<span class='badge badge-primary'>{$stat[$row['status']]}</span>";
                             }elseif($stat[$row['status']] =='Over Due'){
-                              echo "<span class='badge badge-danger'>{$stat[$row['status']]}</span>";
-                            }elseif($stat[$row['status']] =='Done'){
                               echo "<span class='badge badge-success'>{$stat[$row['status']]}</span>";
+                            }elseif($stat[$row['status']] =='Done'){
+                              echo "<span class='badge badge-danger'>{$stat[$row['status']]}</span>";
                             }
                           ?>
                       </td>

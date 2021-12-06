@@ -17,11 +17,11 @@ if(isset($_GET['id'])){
 		<dd>
 			<?php 
         	if($status == 1){
-		  		echo "<span class='badge badge-secondary'>Pending</span>";
+		  		echo "<span class='badge badge-dark'>Pending</span>";
         	}elseif($status == 2){
-		  		echo "<span class='badge badge-primary'>On-Progress</span>";
+		  		echo "<span class='badge badge-warning'>On-Progress</span>";
         	}elseif($status == 3){
-		  		echo "<span class='badge badge-success'>Done</span>";
+		  		echo "<span class='badge badge-danger'>Done</span>";
         	}
         	?>
 		</dd>

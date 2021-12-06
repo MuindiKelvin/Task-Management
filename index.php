@@ -103,14 +103,14 @@
       </div>
     </div>
   </div>
-  <div class="modal fade" id="viewer_modal" role='dialog'>
+  <!--<div class="modal fade" id="viewer_modal" role='dialog'>
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
               <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
               <img src="" alt="">
       </div>
     </div>
-  </div>
+  </div>-->
   </div>
   <!-- /.content-wrapper -->
 
@@ -122,7 +122,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2021 <a href="#">Project Task Management</a>.</strong>
+    <strong>Copyright &copy; 2021, TMS||</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b><?php echo $_SESSION['system']['name'] ?></b>

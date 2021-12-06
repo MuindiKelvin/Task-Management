@@ -24,7 +24,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 <div class="col-lg-12">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="callout callout-info">
+			<div class="card">
 				<div class="col-md-12">
 					<div class="row">
 						<div class="col-sm-6">
@@ -49,17 +49,17 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 								<dd>
 									<?php
 									  if($stat[$status] =='Pending'){
-									  	echo "<span class='badge badge-secondary'>{$stat[$status]}</span>";
-									  }elseif($stat[$status] =='Started'){
 									  	echo "<span class='badge badge-primary'>{$stat[$status]}</span>";
-									  }elseif($stat[$status] =='On-Progress'){
+									  }elseif($stat[$status] =='Started'){
 									  	echo "<span class='badge badge-info'>{$stat[$status]}</span>";
+									  }elseif($stat[$status] =='On-Progress'){
+									  	echo "<span class='badge badge-success'>{$stat[$status]}</span>";
 									  }elseif($stat[$status] =='On-Hold'){
 									  	echo "<span class='badge badge-warning'>{$stat[$status]}</span>";
 									  }elseif($stat[$status] =='Over Due'){
-									  	echo "<span class='badge badge-danger'>{$stat[$status]}</span>";
+									  	echo "<span class='badge badge-dark'>{$stat[$status]}</span>";
 									  }elseif($stat[$status] =='Done'){
-									  	echo "<span class='badge badge-success'>{$stat[$status]}</span>";
+									  	echo "<span class='badge badge-danger'>{$stat[$status]}</span>";
 									  }
 									?>
 								</dd>
@@ -85,7 +85,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<div class="card card-outline card-primary">
+			<div class="card">
 				<div class="card-header">
 					<span><b>Team Member/s:</b></span>
 					<div class="card-tools">
@@ -113,7 +113,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 			</div>
 		</div>
 		<div class="col-md-8">
-			<div class="card card-outline card-primary">
+			<div class="card">
 				<div class="card-header">
 					<span><b>Task List:</b></span>
 					<?php if($_SESSION['login_type'] != 3): ?>
@@ -124,7 +124,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 				</div>
 				<div class="card-body p-0">
 					<div class="table-responsive">
-					<table class="table table-condensed m-0 table-hover">
+					<table class="table table-bordered table-striped">
 						<colgroup>
 							<col width="5%">
 							<col width="25%">
@@ -156,11 +156,11 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 			                        <td>
 			                        	<?php 
 			                        	if($row['status'] == 1){
-									  		echo "<span class='badge badge-secondary'>Pending</span>";
+									  		echo "<span class='badge badge-dark'>Pending</span>";
 			                        	}elseif($row['status'] == 2){
-									  		echo "<span class='badge badge-primary'>On-Progress</span>";
+									  		echo "<span class='badge badge-warning'>On-Progress</span>";
 			                        	}elseif($row['status'] == 3){
-									  		echo "<span class='badge badge-success'>Done</span>";
+									  		echo "<span class='badge badge-danger'>Done</span>";
 			                        	}
 			                        	?>
 			                        </td>
@@ -189,7 +189,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<!--<div class="row">
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
@@ -248,7 +248,7 @@ $manager = $manager->num_rows > 0 ? $manager->fetch_array() : array();
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 </div>
 <style>
 	.users-list>li img {
