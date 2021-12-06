@@ -22,7 +22,7 @@ if($_SESSION['login_type'] != 1)
     ?>
         
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
         <div class="card">
           <div class="card-header">
             <b>Projects Overall Analysis</b>
@@ -121,7 +121,7 @@ if($_SESSION['login_type'] != 1)
         </div>
         </div>
 
-        <div class="col-md-2">
+        <!--<div class="col-md-2">
           <div class="row">
           <div class="col-12 col-sm-6 col-md-12">
             <div class="small-box bg-light shadow-sm border">
@@ -148,4 +148,4 @@ if($_SESSION['login_type'] != 1)
           </div>
       </div>
         </div>
-      </div>
+      </div>-->
